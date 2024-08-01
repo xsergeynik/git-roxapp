@@ -1,11 +1,46 @@
-import React from "react";
-import recipesAll from "../../backend/recipesAll"; // Assuming recipesAll is an array of recipe objects
+import { React, useState  } from "react";
+import recipesAll from "../../backend/recipesAll"; 
+import AddRecipeForm from "./AddRecipeForm"; 
 
 const RecipeList = () => {
+
+	
+
+	function saveRecipe(recipe) {
+		const existingRecipes = JSON.parse(localStorage.getItem('recipesAll')) || [];
+
+		existingRecipes.push(recipe);
+	
+		try {
+			localStorage.setItem('recipesAll', JSON.stringify(existingRecipes));
+			alert('Рецепт успішно додано!'); // Виводимо alert при успішному збереженні
+		} catch (error) {
+			console.error('Помилка при збереженні рецепта:', error);
+		}
+	}
+
+	const [recipes, setRecipes] = useState([]); // Отримати рецепти з localStorage
+
+	const handleRecipeAdded = (newRecipe) => {
+		setRecipes([...recipes, newRecipe]);
+		saveRecipe(newRecipe);
+		//console.log(recipesAll);
+		
+		const updatedRecipesAll = [...recipesAll, newRecipe];
+		console.log(typeof (recipesAll));
+		
+		
+		localStorage.setItem('recipesAll', JSON.stringify(updatedRecipesAll));
+		
+};
+
 	return (
 		<>
 			<section className="recipe">
 				<div className="recipe__container container">
+
+					<AddRecipeForm onRecipeAdded={handleRecipeAdded} />
+					
 					<ul className="recipe__list">
 						{recipesAll.map((recipe) => (
 							<li key={recipe.id} className="recipe__item">

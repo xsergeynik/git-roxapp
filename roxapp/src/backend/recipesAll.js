@@ -94,4 +94,5 @@ const recipesAll = [
 	
 ];
 
+
 export default recipesAll;
