@@ -1,12 +1,21 @@
-import React from 'react';
-import RecipeCard from './RecipeCard';
+import React from "react";
+import RecipeCard from "./RecipeCard";
 
-function RecipeList({ recipes }) {
+function RecipeList({ dataRecipes, searchTerm }) {
+  console.log(dataRecipes);
   return (
-    <div>
-      {recipes.map(recipe => (
-        <RecipeCard key={recipe.id} recipe={recipe} />
-      ))}
+    <div className="recipe__list">
+      {dataRecipes && dataRecipes.length > 0 ? (
+        dataRecipes.map((recipe) => (
+          <RecipeCard
+            key={recipe.id}
+            dataRecipe={recipe}
+            searchTerm={searchTerm}
+          />
+        ))
+      ) : (
+        <p>Рецепти не знайдені.</p>
+      )}
     </div>
   );
 }

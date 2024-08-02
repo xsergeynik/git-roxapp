@@ -1,13 +1,28 @@
 // components/RecipeCard.js
-import React from 'react';
+import React from "react";
+import RecipeCardInstructions from "./RecipeCardInstructions";  
+import RecipeCardIngredients from "./RecipeCardIngredients";
 
-function RecipeCard({ recipe }) {
+function RecipeCard({ dataRecipe,searchTerm }) {
   return (
-    <div>
-      <h2>{recipe.name}</h2>
-      <p>{recipe.description}</p>
-      {/* Додаткова інформація про рецепт */}
-    </div>
+    <>
+      <div className="recipe__item">
+        <div className="recipe__image">
+          <img src={dataRecipe.image} alt={dataRecipe.name} />
+        </div>
+        <h2>{dataRecipe.name}</h2>
+          <p>{dataRecipe.description}</p>
+ 
+  
+    
+        <RecipeCardIngredients dataRecipeInsgr={dataRecipe} searchTerm={searchTerm} />
+
+        <details>
+          <summary>Як готувати "{dataRecipe.name}"</summary>
+          <RecipeCardInstructions dataRecipeInstr={dataRecipe} /> 
+        </details>
+      </div>
+    </>
   );
 }
 
