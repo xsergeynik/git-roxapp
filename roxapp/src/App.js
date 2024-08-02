@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import RecipeList from './components/recipe/RecipeList';
+import RecipeList from './components/recipe/FormAddRecipe';
 import SearchBar from './components/recipe/SearchBar';
 import recipesAll from './data/recipesAll';
 
