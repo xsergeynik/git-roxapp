@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function MyComponent() {
+function reusableLoadPromise() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
