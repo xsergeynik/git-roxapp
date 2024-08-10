@@ -1,5 +1,20 @@
 # APP-roxapp
--appdescr "add butoon libe be google, wrapper SEARCH, POSTGAGE"
+-appdescr 
+•add butoon like be google
 
-# APP-tasks
-# -tsk "spell check in input form" <input spellcheck="true"/>
+# APP-structure:
+SEARCH
+Post page
+
+
+
+# APP-task
+
+-tsk 
+"spell check in input form" <input spellcheck="true"/>
+
+-tsk -userpage 
+lock data, 
+add form login, 
+field(login(phone, nickname),password)
+password validate
