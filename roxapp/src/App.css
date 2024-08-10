@@ -180,7 +180,7 @@ details summary {
   position: relative;
   font-size: 12px;
   border-radius: 2px;
-  border: 1px solid #3e3e42;
+  border: 1px solid var(--color-red-black-grey);
   padding: 2px;
   display: flex;
 }
@@ -209,4 +209,50 @@ details summary {
 
 .highlight {
   background-color: red;
+}
+
+h2 pre {
+	font-size: 32px;
+
+}
+
+.reusable-component {}
+.data {
+	padding: 20px 0;
+}
+.data-body {
+	font-family: Consolas,monospace
+}
+
+.data-body ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.data-body ul li {
+	flex: 0 1 25%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	padding: 0 0 10px 0;
+	background-color: #fff;
+	border-radius: 8px;
+} 
+
+.data-id {
+	border-radius: 8px 8px 0 0;
+	background-color: var(--color-yellow-basic);
+	display: block;
+	padding: 10px 10px 0 10px;
+	color:var(--color-red-black-grey);
+}
+
+.data-body-bottom {
+	padding: 10px 15px 25px 15px;
+}
+
+:root {
+	--color-yellow-basic:#ffde21;
+	--color-yellow-light:#ffea99;
+	--color-red-basic:#ff2c2c;
+	--color-red-black-grey:#3e3e42;
 }

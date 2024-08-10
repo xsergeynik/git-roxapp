@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import './App.css';
 import RecipeList from "./components/recipe/RecipeList";
 import SearchBar from "./components/recipe/SearchBar";
+import LoadPromiseDataFetcher from "./components/reusable/LoadPromiseDataFetcher";
 import recipesAll from "./data/recipesAll"; 
+
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredRecipes, setFilteredRecipes] = useState(recipesAll);
+	const [filteredRecipes, setFilteredRecipes] = useState(recipesAll);
+	
+	
 
   const handleSearch = (term) => {
     setSearchTerm(term);
@@ -30,7 +34,8 @@ function App() {
   return (
     <div className="App">
       <div className="App-recipe recipe">
-      <h1>CooxApp</h1>
+				<h1>CooxApp</h1>
+				<LoadPromiseDataFetcher/>
       <SearchBar searchTerm={searchTerm} onSearch={handleSearch} />
         <RecipeList dataRecipes={filteredRecipes} searchTerm={searchTerm} />
         </div>
