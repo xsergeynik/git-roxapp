@@ -22,3 +22,5 @@ password validate
 -tsk animPopup
 animation popup like be chrome print share
 -css transform: translateX(?);
+
+-tsk generator image, add flag Ukraine
