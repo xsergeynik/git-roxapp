@@ -213,7 +213,10 @@ details summary {
 
 h2 pre {
 	font-size: 32px;
-
+  background-color: #fff;
+  padding: 3px 5px;
+  display: inline-flex; 
+  border-radius: 8px;
 }
 
 .reusable-component {}

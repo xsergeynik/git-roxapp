@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './App.css';
+import Header from "./components/Header";
 import RecipeList from "./components/recipe/RecipeList";
 import SearchBar from "./components/recipe/SearchBar";
 import LoadPromiseDataFetcher from "./components/reusable/LoadPromiseDataFetcher";
@@ -32,9 +33,10 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div className="App-recipe recipe">
-				<h1>CooxApp</h1>
+    <div className="app">
+     	<Header />
+      <div className="app-recipe recipe">
+			
 				<LoadPromiseDataFetcher/>
       <SearchBar searchTerm={searchTerm} onSearch={handleSearch} />
         <RecipeList dataRecipes={filteredRecipes} searchTerm={searchTerm} />
